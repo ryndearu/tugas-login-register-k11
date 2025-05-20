@@ -11,8 +11,8 @@
         <div class="form-container">
             <h2>Registrasi</h2>
             <?php
-            if (isset($error)) {
-                echo '<div class="error-message">' . $error . '</div>';
+            if (isset($_GET['error'])) {
+                echo '<div class="error-message">' . htmlspecialchars($_GET['error']) . '</div>';
             }
             ?>
             <form action="includes/register_process.php" method="POST">
@@ -34,7 +34,7 @@
                 </div>
                 <button type="submit" class="btn">Daftar</button>
             </form>
-            <p class="login-link">Sudah punya akun? <a href="">Login di sini</a></p>
+            <p class="login-link">Sudah punya akun? <a href="login.php">Login di sini</a></p>
         </div>
     </div>
 </body>

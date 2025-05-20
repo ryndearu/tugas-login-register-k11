@@ -1,15 +1,15 @@
 <?php
 // Konfigurasi Database
 $host = "localhost";
-$username = "";
+$username = "root";
 $password = "";
-$database = "";
+$database = "login_register_k11";
 
 // Membuat koneksi
-$conn = mysqli_connect($host, $username, $password, $database);
+$link = mysqli_connect($host, $username, $password, $database);
 
 // Cek koneksi
-if (!$conn) {
+if (!$link) {
     die("Koneksi gagal: " . mysqli_connect_error());
 }
 ?> 

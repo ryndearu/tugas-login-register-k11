@@ -2,9 +2,13 @@
 session_start();
 
 // Cek apakah user sudah login
-
+if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
+    header("location: login.php?error=Silakan masuk terlebih dahulu");
+    exit;
+}
 
 // Cek role user
+$isAdmin = ($_SESSION["role"] === 'admin');
 
 ?>
 
@@ -64,8 +68,8 @@ session_start();
         <div class="form-container dashboard-container">
             <h2>Selamat Datang</h2>
             <div class="welcome-message">
-                <p>Halo, ?????</p>
-                <p>Role: ?????</p>
+                <p>Halo, <?php echo htmlspecialchars($_SESSION["username"]); ?></p>
+                <p>Role: <?php echo htmlspecialchars($_SESSION["role"]); ?></p>
                 <p>Anda telah berhasil login ke sistem.</p>
             </div>
 
