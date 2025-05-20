@@ -23,10 +23,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 mysqli_stmt_store_result($stmt);
 
                 if (mysqli_stmt_num_rows($stmt) == 1) {
-                    mysqli_stmt_bind_result($stmt, $id, $username, $role, $hashed_password); // Hashed password adalah password yang disimpan di database dalam bentuk plain text
+                    mysqli_stmt_bind_result($stmt, $id, $username, $role, $stored_password); // Password yang disimpan di database dalam bentuk plain text
                     if (mysqli_stmt_fetch($stmt)) {
                         // Verifikasi password
-                        if ($password === $hashed_password) {
+                        if ($password === $stored_password) {
                             session_start();
                             $_SESSION["loggedin"] = true;
                             $_SESSION["id"] = $id;
