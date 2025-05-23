@@ -17,8 +17,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $error = "Format email tidak valid.";
     } elseif (empty($password)) {
         $error = "Silakan masukkan kata sandi.";
-    } elseif (strlen($password) < 4) {
-        $error = "Kata sandi harus minimal 4 karakter.";
+    } elseif (strlen($password) < 6) {
+        $error = "Kata sandi harus minimal 6 karakter.";
     } elseif (empty($confirm_password)) {
         $error = "Silakan konfirmasi kata sandi.";
     } elseif ($password !== $confirm_password) {

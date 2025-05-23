@@ -28,8 +28,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Validasi new password
     if (empty(trim($_POST["new_password"]))) {
         $new_password_err = "Silakan masukkan password baru.";     
-    } elseif(strlen(trim($_POST["new_password"])) < 4) {
-        $new_password_err = "Password harus memiliki minimal 4 karakter.";
+    } elseif(strlen(trim($_POST["new_password"])) < 6) {
+        $new_password_err = "Password harus memiliki minimal 6 karakter.";
     } else {
         $new_password = trim($_POST["new_password"]);
     }
